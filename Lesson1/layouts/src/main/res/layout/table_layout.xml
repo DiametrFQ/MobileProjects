@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableRow>
+
+        <Button
+            android:layout_weight="1">
+        </Button>
+
+        <TextView
+            android:layout_weight="1"
+            android:text="This is Table View">
+
+        </TextView>
+
+        <Button
+            android:layout_weight="1">
+        </Button>
+    </TableRow>
+    <TableRow>
+
+        <Button
+            android:layout_weight="1">
+        </Button>
+
+        <CheckBox
+            android:layout_weight="1"
+            android:text="CheckBox">
+        </CheckBox>
+    </TableRow>
+    <TableRow>
+
+        <ImageButton
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_lock_power_off">
+        </ImageButton>
+
+        <Button
+            android:layout_weidth="1">
+        </Button>
+
+        <Button
+            android:layout_weidth="1">
+        </Button>
+
+    </TableRow>
+</TableLayout>
