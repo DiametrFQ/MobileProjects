@@ -12,6 +12,12 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="web">Web</string>
     <string name="data">data</string>
+
+    <string name="empty_input_field">Input text field is empty. Please, enter an integer before starting the worker</string>
+    <string name="invalid_input_field">Please, make sure you are entering correct data.</string>
+    <string name="worker_started">Worker just started to count the Pi with %d points.</string>
+    <string name="worker_finished">Worker has ended with result: %f</string>
+    <string name="worker">В данном фрагменте вычисляется число π\nс использованием метода численного интегрирования (метод Монте-Карло).\nВводить менее 100000 </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
