@@ -20,6 +20,7 @@ class ShareActivity : AppCompatActivity() {
 
         var textViewDevBook : TextView = findViewById(R.id.textView)
         var btn :Button = findViewById(R.id.button2)
+
         btn.setOnClickListener{ onBtnSendClick() }
 
         val extras = intent.extras
