@@ -14,6 +14,7 @@ class LongTime (
     params: WorkerParameters
 ) : Worker(context, params) {
 
+
     private val TAG = LongTime::class.java.simpleName
 
     override fun doWork(): Result {
@@ -25,7 +26,6 @@ class LongTime (
             for (i in 0 until numberOfPoints) {
                 val x = random()
                 val y = random()
-
                 if (x * x + y * y <= 1.0) {
                     insideCircleCount++
                 }
@@ -47,5 +47,4 @@ class LongTime (
             Log.e(TAG, "Error calculating Pi", e)
             return Result.failure()
         }
-    }
-}
+    }}

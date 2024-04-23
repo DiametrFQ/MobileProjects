@@ -18,11 +18,10 @@ import ru.mirea.hohlovdv.mireaproject.databinding.FragmentWorkerBinding
 
 
 class WorkerFragment : Fragment() {
-
     companion object {
         fun newInstance() = WorkerFragment()
-        const val POINT_KEY = "numberOfPoints"
-        const val APP_KEY = "piApproximation"
+        const val NUMBER_OF_POINTS_KEY = "numberOfPoints"
+        const val PI_APPROXIMATION_KEY = "piApproximation"
     }
 
     private val viewModel: WorkerViewModel by activityViewModels()
@@ -75,7 +74,7 @@ class WorkerFragment : Fragment() {
             } else {
                 val inputData = Data
                     .Builder()
-                    .putLong(POINT_KEY, inputText.toLong())
+                    .putLong(NUMBER_OF_POINTS_KEY, inputText.toLong())
                     .build()
 
                 val factorialCalcWorkRequest = OneTimeWorkRequest
@@ -101,7 +100,7 @@ class WorkerFragment : Fragment() {
                     .getWorkInfoByIdLiveData(factorialCalcWorkRequest.id)
                     .observeForever { workInfo ->
                         if (workInfo.state == WorkInfo.State.SUCCEEDED) {
-                            val result = workInfo.outputData.getDouble(APP_KEY, 3.14)
+                            val result = workInfo.outputData.getDouble(PI_APPROXIMATION_KEY, 3.14)
                             viewModel.resultTextView.apply { value = "Result: $result" }
                         }
                     }
