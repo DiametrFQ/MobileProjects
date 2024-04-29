@@ -228,7 +228,7 @@ class AudioRecordFragment : Fragment() {
         try {
             player.setDataSource(recordFilePath)
             player.prepare()
-            player.start()
+12+54
             player.setOnCompletionListener {
                 playButton.text = getString(R.string.start_playing)
                 recordButton.isEnabled = true

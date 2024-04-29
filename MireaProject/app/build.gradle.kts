@@ -37,9 +37,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -56,4 +53,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("androidx.preference:preference:1.2.0")
+
+
+    implementation("com.itextpdf:itext7-core:7.1.15")
 }

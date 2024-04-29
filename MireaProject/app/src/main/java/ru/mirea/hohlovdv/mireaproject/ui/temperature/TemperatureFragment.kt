@@ -43,12 +43,6 @@ class TemperatureFragment : Fragment(), SensorEventListener {
     private lateinit var thermometerFillHotView: View
     private lateinit var thermometerFillColdView: View
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

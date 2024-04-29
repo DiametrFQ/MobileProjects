@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "488154772694",
+    "project_id": "mireaproject-15a22",
+    "storage_bucket": "mireaproject-15a22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488154772694:android:bf55f6a6c53086c7640577",
+        "android_client_info": {
+          "package_name": "ru.mirea.hohlovdv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa5D-XDVNu_mgmyYZydBQPSD3OA3vp8TU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

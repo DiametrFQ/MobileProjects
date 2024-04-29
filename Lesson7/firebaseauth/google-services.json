@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "896058550194",
+    "project_id": "fir-auth-4a80c",
+    "storage_bucket": "fir-auth-4a80c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896058550194:android:cee1f990a64367350b66ab",
+        "android_client_info": {
+          "package_name": "ru.mirea.hohlovdv.firebaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0r_Y_A0O3DrT6DPVeyWNEazt4apcrxjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
