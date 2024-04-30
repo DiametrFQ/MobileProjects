@@ -2,6 +2,7 @@ package ru.mirea.hohlovdv.mireaproject.ui.mail
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,10 +31,9 @@ class DraftFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_draft, container, false)
+        val view = inflater.inflate(R.layout.fragment_draft_list, container, false)
 
         val filesList = context?.fileList() ?: emptyArray()
-
         // Set the adapter
         if (view is RecyclerView) {
             with(view) {
@@ -41,7 +41,8 @@ class DraftFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = DraftRecyclerViewAdapter(filesList.drop(1).toList())
+                adapter = DraftRecyclerViewAdapter(filesList.drop(2).toList())
+
             }
         }
 

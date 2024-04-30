@@ -4,10 +4,12 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import ru.mirea.hohlovdv.mireaproject.R
 import ru.mirea.hohlovdv.mireaproject.databinding.FragmentMailBinding
+import kotlin.concurrent.thread
 
 class MailDraftFragment : DialogFragment() {
 
@@ -81,15 +83,16 @@ class MailDraftFragment : DialogFragment() {
     }
 
     private fun saveDraft(email: String, emailMessage: String) {
-        Thread {
+        thread {
             try {
                 val draftFileName = "$email-draft.txt"
                 val draft = requireContext().openFileOutput(draftFileName, MODE_PRIVATE)
                 draft.write(emailMessage.toByteArray())
                 draft.close()
+                Log.d("asdas", "tut 2")
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-        }.start()
+        }
     }
 }
