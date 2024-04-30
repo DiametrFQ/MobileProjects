@@ -25,9 +25,9 @@
             android:icon="@drawable/ic_menu_web_view"
             android:title="@string/menu_web_view" />
         <item
-            android:id="@+id/nav_background_task"
-            android:icon="@drawable/ic_menu_web_view"
-            android:title="@string/menu_background_task" />
+            android:id="@+id/nav_worker"
+            android:icon="@drawable/ic_menu_worker"
+            android:title="@string/menu_worker" />
         <item
             android:id="@+id/nav_audio_record"
             android:icon="@drawable/ic_menu_audio_record"
@@ -40,15 +40,17 @@
             android:id="@+id/nav_temperature"
             android:icon="@drawable/ic_menu_temperature"
             android:title="@string/menu_temperature" />
-
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_temperature"
-            android:title="@string/menu_profile" />
-
+            android:id="@+id/nav_draft_list"
+            android:icon="@drawable/ic_menu_draft_list"
+            android:title="@string/menu_draft_list" />
         <item
-            android:id="@+id/nav_files"
-            android:icon="@drawable/ic_menu_temperature"
-            android:title="@string/menu_files" />
+            android:id="@+id/nav_heroes"
+            android:icon="@drawable/ic_menu_hero_list"
+            android:title="@string/menu_heroes" />
+        <item
+            android:id="@+id/nav_institutions"
+            android:icon="@drawable/ic_menu_places"
+            android:title="@string/menu_places" />
     </group>
 </menu>

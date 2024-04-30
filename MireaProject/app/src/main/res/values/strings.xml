@@ -12,17 +12,19 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_data">Data</string>
     <string name="menu_web_view">Web</string>
-    <string name="menu_background_task">Worker</string>
+    <string name="menu_worker">Background task</string>
+    <string name="menu_audio_record">Audio record</string>
+    <string name="menu_camera">Camera</string>
+    <string name="menu_temperature">Temperature</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_mail">Mail</string>
+    <string name="menu_heroes">Heroes</string>
     <string name="empty_input_field">Input text field is empty. Please, enter an integer before starting the worker</string>
     <string name="invalid_input_field">Please, make sure you are entering correct data.</string>
     <string name="worker_started">Worker just started to count the Pi with %d points.</string>
 
-    <string name="worker_task_description">В данном фрагменте вычисляется число π\nс использованием метода численного интегрирования (метод Монте-Карло).\nВводить менее 100000 </string>
+    <string name="worker_description">В данном фрагменте вычисляется число π\nс использованием метода численного интегрирования (метод Монте-Карло).\nВводить менее 100000 </string>
     <string name="worker_finished">Worker has ended with result: %f</string>
-    <string name="menu_audio_record">Audio record</string>
-    <string name="menu_camera">Camera</string>
-    <string name="menu_worker">Worker</string>
-    <string name="menu_temperature">Temperature</string>
 
     <string name="permission_denied">Permission denied, thus the app is currently doesn`t work</string>
     <string name="stop_recording">Остановить запись</string>
@@ -30,10 +32,10 @@
     <string name="pause_playing">Прервать проигрывание</string>
     <string name="start_playing">Воспроизвести</string>
     <string name="resume_playing">Продолжить воспроизведение</string>
+
     <string name="temperature_format">"Temperature: %d°C"</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="write_letter">Write a letter</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -47,13 +49,72 @@
     <!-- Notifivations -->
     <string name="notification_summary">App will send you notifications</string>
 
-
+    <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
   </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
-    <string name="menu_profile">Profile</string>
-    <string name="menu_files">Files</string>
+    <!-- Draft -->
+    <string name="draft_saved">Draft successfully saved</string>
+    <string name="draft_not_saved">Draft hasn`t been preserved</string>
+
+    <!-- Buttons -->
+    <string name="save_draft_button">Save</string>
+    <string name="cancel_draft_button">Cancel</string>
+    <string name="discard_draft_button">Discard</string>
+    <string name="menu_draft_list">Drafts</string>
+    <string name="menu_draft">Draft</string>
+
+    <!--Login-->
+    <string name="label_emailpassword">Email/Password Authentication</string>
+    <string name="desc_emailpassword">Use an email and password to authenticate
+with Firebase.</string>
+    <string name="hint_user_id">User ID</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="firebase_status_fmt">Firebase UID: %s</string>
+    <string name="firebase_user_management">Firebase User Management</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified:
+%2$b)</string>
+    <string name="emailpassword_title_text">Email and Password</string>
+    <string name="error_sign_in_failed">Sign in failed, see logs for details.</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="loading_failed">Failed to load</string>
+    <string name="retry">Retry</string>
+    <string name="loading">Loading</string>
+    <string name="placeholder_success">Placeholder text</string>
+    <string name="mars_photo">Mars photo</string>
+    <string name="menu_places">Places</string>
+
+    <!--Permission requests-->
+    <string name="camera_permissions">
+    Our app needs access to your device\'s microphone to record audio.\n
+    Please grant this permission in your device settings.
+  </string>
+    <string name="audio_permissions">
+    Our app needs access to your device\'s microphone to record audio.\n
+    Please grant this permission in your device settings.
+  </string>
+    <string name="location_permissions">
+    Our app needs access to your device\'s location.\n
+    Please grant this permission in your device settings
+  </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -22,54 +22,58 @@
         android:name="ru.mirea.hohlovdv.mireaproject.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
-
     <fragment
         android:id="@+id/nav_data"
         android:name="ru.mirea.hohlovdv.mireaproject.DataFragment"
         android:label="@string/menu_data"
         tools:layout="@layout/fragment_data" />
-
     <fragment
-        android:id="@+id/nav_web"
+        android:id="@+id/nav_web_view"
         android:name="ru.mirea.hohlovdv.mireaproject.WebViewFragment"
         android:label="@string/menu_web_view"
         tools:layout="@layout/fragment_web_view" />
-
     <fragment
-        android:id="@+id/nav_worker"
+        android:id="@+id/nav_background_task"
         android:name="ru.mirea.hohlovdv.mireaproject.ui.worker.WorkerFragment"
         android:label="@string/menu_worker"
         tools:layout="@layout/fragment_worker" />
-
-
-    <fragment
-        android:id="@+id/nav_camera"
-        android:name="ru.mirea.hohlovdv.mireaproject.ui.camera.CameraFragment"
-        android:label="@string/menu_camera"
-        tools:layout="@layout/fragment_camera" />
-
-
     <fragment
         android:id="@+id/nav_audio_record"
         android:name="ru.mirea.hohlovdv.mireaproject.ui.audiorecord.AudioRecordFragment"
         android:label="@string/menu_audio_record"
         tools:layout="@layout/fragment_audio_record" />
-
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="ru.mirea.hohlovdv.mireaproject.ui.camera.CameraFragment"
+        android:label="@string/menu_camera"
+        tools:layout="@layout/fragment_camera" />
     <fragment
         android:id="@+id/nav_temperature"
         android:name="ru.mirea.hohlovdv.mireaproject.ui.temperature.TemperatureFragment"
         android:label="@string/menu_temperature"
         tools:layout="@layout/fragment_temperature" />
-
     <fragment
         android:id="@+id/nav_profile"
         android:name="ru.mirea.hohlovdv.mireaproject.ui.profile.ProfileFragment"
-        android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_temperature" />
-
+        android:label="@string/menu_profile" />
     <fragment
-        android:id="@+id/nav_files"
-        android:name="ru.mirea.hohlovdv.mireaproject.ui.files.FilesFragment"
-        android:label="@string/menu_files"
-        tools:layout="@layout/fragment_temperature" />
+        android:id="@+id/nav_mail"
+        android:name="ru.mirea.hohlovdv.mireaproject.ui.mail.MailDraftFragment"
+        android:label="@string/menu_mail"
+        tools:layout="@layout/fragment_mail" />
+    <fragment
+        android:id="@+id/nav_draft_list"
+        android:name="ru.mirea.hohlovdv.mireaproject.ui.mail.DraftFragment"
+        android:label="@string/menu_draft_list"
+        tools:layout="@layout/fragment_draft_list" />
+    <fragment
+        android:id="@+id/nav_heroes"
+        android:name="ru.mirea.hohlovdv.mireaproject.ui.heroes.HeroesFragment"
+        android:label="@string/menu_heroes"
+        tools:layout="@layout/fragment_heroes" />
+    <fragment
+        android:id="@+id/nav_institutions"
+        android:name="ru.mirea.hohlovdv.mireaproject.ui.places.PlacesFragment"
+        android:label="@string/menu_places"
+        tools:layout="@layout/fragment_places" />
 </navigation>
