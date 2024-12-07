@@ -1,17 +1,18 @@
-package ru.mirea.khokhlov.myapplication.domains.usecases;
+package ru.mirea.khokhlov.domain.usecases;
 
-import ru.mirea.khokhlov.myapplication.domains.models.Star;
-import ru.mirea.khokhlov.myapplication.domains.repository.MovieRepository;
+import java.util.List;
+
+import ru.mirea.khokhlov.domain.models.Star;
+import ru.mirea.khokhlov.domain.repository.StarRepository;
 
 public class GetFavoriteStarUseCase {
+    private final StarRepository repository;
 
-    private MovieRepository movieRepository;
-
-    public GetFavoriteStarUseCase(MovieRepository movieRepository){
-        this.movieRepository = movieRepository;
-    }
-    public Star execute(){
-        return movieRepository.getMovie();
+    public GetFavoriteStarUseCase(StarRepository repository) {
+        this.repository = repository;
     }
 
+    public void execute(StarRepository.Callback<List<Star>> callback) {
+        repository.getAllStars(callback);
+    }
 }

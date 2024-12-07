@@ -19,5 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My Application"
+rootProject.name = "ru.mirea.Privalov.Lesson9"
 include(":app")
+include(":data")
+include(":domain")

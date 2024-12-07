@@ -1,16 +1,17 @@
-package ru.mirea.khokhlov.myapplication.domains.usecases;
+package ru.mirea.khokhlov.domain.usecases;
 
-import ru.mirea.khokhlov.myapplication.domains.models.Star;
-import ru.mirea.khokhlov.myapplication.domains.repository.MovieRepository;
+import ru.mirea.khokhlov.domain.models.Star;
+import ru.mirea.khokhlov.domain.repository.StarRepository;
 
 public class SaveStarToFavoriteUseCase {
 
-    private MovieRepository movieRepository;
+    private StarRepository starRepository;
 
-    public SaveStarToFavoriteUseCase(MovieRepository movieRepository){
-        this.movieRepository = movieRepository;
+    public SaveStarToFavoriteUseCase(StarRepository starRepository) {
+        this.starRepository = starRepository;
     }
-    public boolean execute(Star movie){
-        return movieRepository.saveMovie(movie);
+
+    public boolean execute(Star star) {
+        return starRepository.saveStar(star);
     }
 }

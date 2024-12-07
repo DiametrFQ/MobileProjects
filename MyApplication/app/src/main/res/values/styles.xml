@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Основная тема приложения -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#000000</item> <!-- Чёрный -->
+        <item name="colorPrimaryDark">#000000</item> <!-- Ещё темнее -->
+        <item name="colorAccent">#ffffff</item> <!-- Белый -->
+        <item name="android:windowBackground">#000000</item> <!-- Фон -->
+        <item name="android:fontFamily">@font/orbitron_regular</item> <!-- Шрифт -->
+        <item name="android:textColor">#ffffff</item> <!-- Белый текст -->
+    </style>
+
+    <!-- Кнопки -->
+    <style name="ButtonStyle">
+        <item name="android:backgroundTint">#ffffff</item> <!-- Белый фон -->
+        <item name="android:textColor">#000000</item> <!-- Чёрный текст -->
+        <item name="android:fontFamily">@font/orbitron_regular</item>
+    </style>
+
+    <!-- Текстовые поля -->
+    <style name="EditTextStyle">
+        <item name="android:backgroundTint">#ffffff</item> <!-- Белая линия -->
+        <item name="android:textColor">#ffffff</item> <!-- Белый текст -->
+        <item name="android:textColorHint">#888888</item> <!-- Серый для подсказки -->
+        <item name="android:fontFamily">@font/orbitron_regular</item>
+    </style>
+
+    <!-- Текст -->
+    <style name="TextViewStyle">
+        <item name="android:textColor">#ffffff</item> <!-- Белый текст -->
+        <item name="android:fontFamily">@font/orbitron_regular</item>
+    </style>
+</resources>

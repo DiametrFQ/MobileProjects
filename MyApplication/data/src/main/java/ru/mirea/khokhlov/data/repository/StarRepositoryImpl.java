@@ -1,40 +1,81 @@
-package ru.mirea.khokhlov.myapplication.data.repository;
+package ru.mirea.khokhlov.data.repository;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import java.util.Collections;
+import java.util.List;
 
-import ru.mirea.khokhlov.myapplication.domains.models.Star;
-import ru.mirea.khokhlov.myapplication.domains.repository.MovieRepository;
+import java.util.stream.Collectors;
 
-public class StarRepositoryImpl implements MovieRepository {
+import retrofit2.Call;
+import retrofit2.Response;
+import ru.mirea.khokhlov.data.database.dao.StarDao;
+import ru.mirea.khokhlov.data.database.entity.StarEntity;
+import ru.mirea.khokhlov.data.network.ApiClient;
+import ru.mirea.khokhlov.data.network.StarApi;
+import ru.mirea.khokhlov.domain.models.Star;
+import ru.mirea.khokhlov.domain.repository.StarRepository;
 
-    private static final String PREFERENCES_NAME = "MoviePreferences";
-    private static final String KEY_MOVIE_ID = "movie_id";
-    private static final String KEY_MOVIE_TITLE = "movie_title";
+public class StarRepositoryImpl implements StarRepository {
+    private final StarDao starDao;
+    private final StarApi starApiService;
 
-    private SharedPreferences sharedPreferences;
-
-    public StarRepositoryImpl(Context context) {
-        this.sharedPreferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
+    public StarRepositoryImpl(StarDao starDao) {
+        this.starDao = starDao;
+        starApiService = ApiClient.getRetrofitInstance().create(StarApi.class);
     }
 
     @Override
-    public boolean saveMovie(Star movie) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(KEY_MOVIE_ID, movie.getId());
-        editor.putString(KEY_MOVIE_TITLE, movie.getName());
-        return editor.commit(); // Сохранение данных
+    public void getAllStars(Callback<List<Star>> callback) {
+        // Сначала пытаемся загрузить данные с сервера
+        new Thread(() -> {
+            try {
+                Response<List<Star>> response = starApiService.getAllStars().execute();
+                if (response.isSuccessful() && response.body() != null) {
+                    List<Star> stars = response.body();
+
+                    // Сохраняем данные в локальную базу
+                    saveStarsToDatabase(stars);
+
+                    // Возвращаем данные
+                    callback.onSuccess(stars);
+                } else {
+                    // Если сервер недоступен, загружаем из базы данных
+                    loadStarsFromDatabase(callback);
+                }
+            } catch (Exception e) {
+                // Если ошибка, загружаем из базы данных
+                loadStarsFromDatabase(callback);
+            }
+        }).start();
+    }
+    @Override
+    public boolean saveStar(Star star) {
+        try {
+            // Преобразуем модель Star в сущность StarEntity
+            StarEntity entity = new StarEntity(star.getName(), star.getDescription(), star.getPhotoUrl());
+            starDao.insertAll(Collections.singletonList(entity)); // Сохраняем в базу
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
-    @Override
-    public Star getMovie() {
-        int movieId = sharedPreferences.getInt(KEY_MOVIE_ID, -1);
-        String movieTitle = sharedPreferences.getString(KEY_MOVIE_TITLE, "No movie");
+    private void saveStarsToDatabase(List<Star> stars) {
+        List<StarEntity> entities = stars.stream()
+                .map(star -> new StarEntity(star.getName(), star.getDescription(), star.getPhotoUrl()))
+                .collect(Collectors.toList());
+        starDao.insertAll(entities);
+    }
 
-        if (movieId != -1 && !movieTitle.equals("No movie")) {
-            return new Star(movieId, movieTitle);
-        } else {
-            return new Star(1, "Game of Thrones");
+    private void loadStarsFromDatabase(Callback<List<Star>> callback) {
+        try {
+            List<StarEntity> entities = starDao.getAllStars();
+            List<Star> stars = entities.stream()
+                    .map(entity -> new Star(entity.getName(), entity.getDescription(), entity.getPhotoUrl()))
+                    .collect(Collectors.toList());
+            callback.onSuccess(stars);
+        } catch (Exception e) {
+            callback.onError(e);
         }
     }
 }

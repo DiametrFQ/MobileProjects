@@ -1,4 +1,4 @@
-package ru.mirea.khokhlov.data.dao;
+package ru.mirea.khokhlov.data.database.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -6,14 +6,13 @@ import androidx.room.Query;
 
 import java.util.List;
 
+import ru.mirea.khokhlov.data.database.entity.StarEntity;
+
 @Dao
 public interface StarDao {
     @Insert
-    void insertStar(StarEntity star);
+    void insertAll(List<StarEntity> stars);
 
-    @Query("SELECT * FROM stars")
+    @Query("SELECT * FROM StarEntity")
     List<StarEntity> getAllStars();
-
-    @Query("DELETE FROM stars")
-    void deleteAllStars();
 }

@@ -1,54 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.MainActivity">
+    android:background="@drawable/galaxy_background"
+    android:padding="16dp">
+
+    <!-- Заголовок -->
+
+    <!-- Поле для ввода звезды -->
+
+    <!-- Кнопка для сохранения -->
+
+    <!-- Кнопка для отображения звезды -->
+
+    <!-- RecyclerView -->
 
     <TextView
-        android:id="@+id/starName"
-        android:layout_width="154dp"
-        android:layout_height="29dp"
-        android:text="Галактика Андромеда"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/title"
+        android:layout_width="254dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="68dp"
+        android:fontFamily="@font/orbitron_regular"
+        android:text="Explore the Stars"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/textInputStar"
-        android:layout_width="292dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="72dp"
-        android:hint="Выберите звезду"
+        style="@style/EditTextStyle"
+        android:layout_width="253dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#ffffff"
+        android:hint="Enter Star Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/starName" />
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
     <Button
         android:id="@+id/saveStar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="Сохранить звезду"
+        style="@style/ButtonStyle"
+        android:layout_width="251dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:text="Save Star"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputStar" />
+        app:layout_constraintTop_toBottomOf="@id/textInputStar" />
 
     <Button
         android:id="@+id/showStar"
-        android:layout_width="wrap_content"
+        style="@style/ButtonStyle"
+        android:layout_width="253dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="8dp"
+        android:text="Show Favorite Star"
+        app:layout_constraintBottom_toTopOf="@+id/openRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saveStar"
+        app:layout_constraintVertical_bias="0.016" />
+
+    <Button
+        android:id="@+id/openRecyclerView"
+        android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="102dp"
-        android:text="Показать звезду"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="23dp"
+        android:text="Open Star List"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/toLogin"
+        android:layout_width="93dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginEnd="4dp"
+        android:text="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="223dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="130dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveStar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

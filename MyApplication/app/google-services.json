@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "972317963324",
+    "project_id": "my-application-c72ae",
+    "storage_bucket": "my-application-c72ae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972317963324:android:792690bc93146e4f477f39",
+        "android_client_info": {
+          "package_name": "ru.mirea.khokhlov.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDF1862NB7En7yFS6zTrIafT3y7uJVO3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

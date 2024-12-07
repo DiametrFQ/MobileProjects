@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace = "ru.mirea.khokhlov.Lesson9"
+    namespace = "com.example.rumireaprivalovlesson9"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "ru.mirea.khokhlov.Lesson9"
-        minSdk = 24
+        applicationId = "com.example.rumireaprivalovlesson9"
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -37,6 +37,10 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(libs.lifecycle.viewmodel.android)
+    implementation(libs.lifecycle.viewmodel)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
